@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="script/js.js"></script>
+    <title>Consultoria</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(220, 220, 220);
+        }
+
+        .logo img {
+            max-width: 100%;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            /* background-color: #555; */
+            color: #aaa5a5;
+        }
+
+        .banner {
+            background-color: rgb(0, 0, 46);
+            background-image: linear-gradient(135deg, #000000aa 0%, #000000aa 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1500&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .banner.bn2 {
+            background-color: rgb(0, 0, 46);
+            background-image: linear-gradient(135deg, #000000aa 0%, #000000aa 100%), url('image/contabilidade.jfif');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .banner h1 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .banner span, p {
+            padding: 20px 20%;
+            box-sizing: border-box;
+        }
+
+        .theme span, p {
+            padding: 20px 20%;
+            box-sizing: border-box;
+        }
+
+         @media (max-width: 768px) {
+            .banner p, span {
+                padding: 10px 5%;
+                box-sizing: border-box;
+            }
+
+            .theme span, p {
+                padding: 10px 5%;
+                box-sizing: border-box;
+            }
+        }
+
+        .pxl {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .pxl a.b {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0px;
+            text-decoration: none;
+            /* transition: background-color 0.3s ease; */
+        }
+
+        /* .pxl a.b1:hover{
+            background-color: #124e8d;
+            color: white;
+        } */
+
+        .pxl a.b:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .pxl a.b2 {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .theme {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+            margin: 5% 0;
+            box-sizing: border-box;
+        }
+
+        .theme h2 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .theme p {
+            padding: 0px 10%;
+        }
+
+        /* slides sl 1 */
+
+        .slide {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plans {
+            display: flex;
+            flex-direction: row;
+            overflow-x: scroll;
+            width: 100%;
+        }
+
+        .plan.card {
+            width: 400px;
+            height: auto;
+            border-radius: 0px;
+        }
+
+        .plan.card h3 {
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .plan.card {
+                width: 98%;
+                height: auto;
+                border-radius: 0px;
+            }
+
+            .plan.card h3 {
+                text-transform: uppercase;
+            }
+        }
+
+        .card-anim ol {
+            padding-left: 0;
+            margin-bottom: 18px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-anim ol li {
+            padding: 8px 12px;
+            border-bottom: 1px solid gainsboro;
+            padding: 20px 0;
+        }
+    </style>
+
+    <style>
+        .react-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: start;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .card-anim {
+            background: #fff;
+            border-radius: .0rem;
+            /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10); */
+            position: relative;
+            width: 400px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.4s cubic-bezier(.77, 0, .18, 1), transform 0.4s cubic-bezier(.77, 0, .18, 1);
+            cursor: pointer;
+            will-change: transform;
+        }
+
+        .card-anim:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.085);
+            transform: translateY(-8px) scale(1.03);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 230px;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(.77, 0, .18, 1);
+        }
+
+        /* .card-anim:hover .card-img img {
+            transform: scale(1.08);
+        } */
+
+        .card-anim .content {
+            /* background: linear-gradient(135deg, #011b37 80%, #007bffcc 100%); */
+            background-color: white;
+            color: #000000;
+            padding: 32px 24px 24px 24px;
+            box-sizing: border-box;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            position: relative;
+            transition: background 0.4s;
+            opacity: 0.96;
+            min-height: 180px;
+        }
+
+        .card-anim h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #007bff;
+        }
+
+        .card-anim p {
+            font-size: 1rem;
+            margin-bottom: 18px;
+            color: #000000;
+        }
+
+        .card-btn {
+            background: #fff;
+            color: #007bff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid #007bff;
+            /* box-shadow: 0 2px 8px rgba(0,123,255,0.10); */
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            margin-top: 8px;
+        }
+
+        .card-btn:hover {
+            background: #007bff;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18);
+        }
+
+        @media (max-width: 1024px) {
+            .react-cards {
+                gap: 18px;
+            }
+
+            .card-anim {
+                width: 260px;
+                min-height: auto;
+            }
+
+            .card-img {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .react-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+
+            .card-anim {
+                width: 90vw;
+                max-width: 98%;
+            }
+
+            .card-anim:hover {
+                transform: none;
+            }
+        }
+    </style>
+
+    <style>
+        header {
+            transition: box-shadow 0.4s, top 0.4s, background 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header.fixed {
+            position: fixed;
+            top: -70px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.97);
+        }
+
+        header.fixed.visible {
+            top: 0;
+        }
+
+        .logo {
+            flex: 0 0 auto;
+        }
+
+        .navbar {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-list li {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 17px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-list a:hover {
+            background: #f0f4ff;
+            color: #007bff;
+        }
+
+        .nav-list i {
+            font-size: 1.2em;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #007bff;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-list a {
+                font-size: 16px;
+                padding: 8px 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .logo {
+                margin-bottom: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 60%;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: -2px 0 16px rgba(0, 0, 0, 0.10);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+                padding: 0;
+                transition: right 0.4s cubic-bezier(.77, 0, .18, 1);
+                z-index: 1100;
+            }
+
+            .navbar.open {
+                right: 0;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                margin-top: 80px;
+            }
+
+            .nav-list li {
+                width: 100%;
+            }
+
+            .nav-list a {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 14px 20px;
+                font-size: 17px;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 90px;
+            }
+
+            .navbar {
+                width: 90vw;
+            }
+
+            .nav-list a {
+                font-size: 15px;
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+
+<!-- modal para pesquisa -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Pesquise aqui</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text" id="inputGroup-sizing-lg"><i class="bi bi-search"></i></span>
+                    <input type="search" class="form-control" aria-label="Sizing example input" aria-describedby=""
+                        placeholder="Digite sua pesquisa aqui...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+
+    <div class="call-cent">
+        <a href="https://wa.me/972960560" class="call-btn whatsapp" target="_blank" title="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="#agendamento" class="call-btn schedule" title="Agendar Consultoria">
+            <i class="bi bi-calendar-check"></i>
+        </a>
+    </div>
+
+    <header id="mainHeader">
+        <div class="logo">
+            <img src="logo/logo.jpeg" alt="Logo" width="150px">
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li>
+                    <a href="#"><i class="bi bi-house-door"></i> <span>Home</span></a>
+                </li>
+                <li>
+                    <a href="#servicos"><i class="bi bi-briefcase"></i> <span>Serviços</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-people"></i> <span>Sobre nós</span></a>
+                </li>
+                <li>
+                    <a href="#contactos"><i class="bi bi-envelope"></i> <span>Contato</span></a>
+                </li>
+                <li>
+                    <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="bi bi-search"></i></a>
+                </li>
+                <li>
+                    <!-- <a href="#" title="Modo escuro/claro"><i class="bi bi-moon"></i></a> -->
+                </li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </header>
+
+    <div class="banner">
+        <div class="container text-center text-white"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1>Bem-vindo à Consultoria</h1>
+            <p>Somos especialistas em soluções empresariais,
+                oferecendo consultoria personalizada para impulsionar o crescimento do seu negócio. Nossa equipe está
+                pronta para ajudar você a superar obstáculos, otimizar processos e alcançar resultados excepcionais.</p>
+            <div class="pxl">
+                <a href="#" class="b b1">Saiba mais</a>
+                <a href="agendamento.html" class="b b2">Agende uma consultoria</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme">
+        <h2>Nossos Pilares</h2>
+        <span>Conheça os nossos pilares que definem nossa empresa.</span>
+    </div>
+
+    <div class="slide sl">
+        <div class="plans">
+            <div class="p">
+                <div class="plan card">
+                <i class="bi bi-bar-chart-fill icon-blue"></i>
+                <h4>Eficiência</h4>
+                <p>Consultoria financeira básica para pequenas empresas. Análise de fluxo de caixa, planejamento e dicas
+                    de economia.</p>
+                <!-- <a href="#agendar" class="btn btn-primary">Agendar</a> -->
+            </div>
+            </div>
+            <div class="p">
+            <div class="plan card">
+                <i class="bi bi-pie-chart-fill icon-green"></i>
+                <h4>Produtividade</h4>
+                <p>Consultoria completa com planejamento estratégico, investimentos, redução de custos e acompanhamento
+                    mensal.</p>
+                <!-- <a href="#agendar" class="btn btn-success">Agendar</a> -->
+            </div>
+            </div>
+            <div class="p">
+            <div class="plan card">
+                <i class="bi bi-currency-dollar icon-orange"></i>
+                <h4>Soluções</h4>
+                <p>Consultoria personalizada, gestão de investimentos, auditoria financeira e suporte exclusivo para
+                    grandes empresas.</p>
+                <!-- <a href="#agendar" class="btn btn-warning">Agendar</a> -->
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="theme" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <span>Desfrute da qualidade dos nossos serviços.</span>
+        <div class="pxl">
+            <a href="#" class="a"
+                style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 0px; text-decoration: none; transition: background-color 0.3s, color 0.3s;"
+                type="button">Saiba mais</a>
+        </div>
+    </div>
+
+    <div class="slide sl1">
+        <div class="cards react-cards">
+            <div class="card card-anim">
+                <div class="card-img">
+                    <img src="image/contabilidade.jfif" alt="Consultoria">
+                </div>
+                <div class="content">
+                    <h3>Contabilidade</h3>
+                    <ol>
+                        <li><span>Produção de relatórios</span></li>
+                        <li><span>Fecho de contas (regime geral e simplificado)</span> </li>
+                        <li><span>Classificação de documentos e lançamentos contabilísticos</span></li>
+                        <li><span>Recuperação de exercícios</span></li>
+                        <li><span>Apuramento de resultados</span></li>
+                        <li><span>Mapas e tabelas de controlo</span></li>
+                        <li><span>Amortização e depreciação de imobilizados</span></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="card card-anim">
+                <div class="card-img">
+                    <img src="image/Desarrollo profesional.jfif" alt="Consultoria Financeira">
+                </div>
+                <div class="content">
+                    <h3>Gestão de Recursos Humanos</h3>
+                    <ol>
+                        <li>Processamento e pagamentos de salários;</li>
+                        <li>Gestão do portal da empresa no INSS;</li>
+                        <li>Inscrição da empresa e dos funcionários no INSS;</li>
+                        <li>Vinculação e desvinculação de funcionários na segurança social;</li>
+                        <li>Emissão de guias de pagamentos de segurança social;</li>
+                        <li><span>Recrutamento e seleção de novos funcionários e acompanhamento de desempenho;</span>
+                        </li>
+                        <li>Estágio formativo académico, profissional e empresarial;</li>
+                        <li>Gestão de férias e faltas;</li>
+                        <li>Gestão de licença de maternidade, paternidade e parental;</li>
+                        <li>Cálculo de fecho de contas, compensação e indemnização.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="card card-anim">
+                <div class="card-img">
+                    <img src="image/recursos humanos.jfif" alt="Consultoria Financeira">
+                </div>
+                <div class="content">
+                    <h3>Direitos empresariais</h3>
+                    <ol>
+                        <li>Compliance</li>
+                        <li>Abertura de Empresa</li>
+                        <li>Alteração do pacto social</li>
+                        <li>Relação jurídico laboral</li>
+                        <li>Elaboração de contratos de trabalho a luz da nova LGT</li>
+                        <li>Gestão de Admissão e cessação de contratos;</li>
+                        <li>Acordo de resolução de conflitos extrajudiciais</li>
+                        <li>Instauração de processos disciplinar</li>
+                        <li>Criações de regulamentos internos</li>
+                        <li>Formações e workshops.</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- <div class="card card-anim">
+                <div class="card-img">
+                    <img src="image/fiscalidde.jfif" alt="Atendimento 24H">
+                </div>
+                <div class="content">
+                    <h3>Fiscalidade</h3>
+                    <ol>
+                        <li><span>Consultoria fiscal</span></li>
+                        <li><span>Resolução de conflitos fiscais com a AGT</span>
+                        </li>
+                        <li><span>Estruturação e aconselhamento de planeamento fiscal</span></li>
+                    </ol>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="banner bn2" style="margin-top: 0%; margin-bottom: 0%">
+        <div class="container text-center text-white"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1>Fazer Agendamento !</h1>
+            <p>
+                Agende sua consultoria de forma rápida e prática! Preencha o formulário abaixo informando seus dados,
+                escolha o serviço desejado e indique a data e horário preferenciais. Nossa equipe entrará em contato
+                para confirmar o agendamento e garantir um atendimento personalizado para o seu negócio.
+            </p>
+            <div class="pxl">
+                <a href="#agendamento" class="b b1">
+                    Agende uma consultoria
+                    <i class="bi bi-arrow-down-circle" style="margin-left:8px;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="agendamento">
+        <div class="content-contact">
+            <h2>Agendar Consultoria</h2>
+            <p>Preencha o formulário abaixo para agendar sua consultoria personalizada. Entraremos em contato para
+                confirmar o horário e detalhes.</p>
+            <form action="#" method="post">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Telefone/WhatsApp</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="service" class="form-label">Serviço desejado</label>
+                        <select class="form-select" id="service" name="service" required>
+                            <option value="">Selecione...</option>
+                            <option value="contabilidade">Contabilidade</option>
+                            <option value="gestao_recursos_humanos">Gestão de Recursos Humanos</option>
+                            <option value="direitos_empresariais">Direitos Empresariais</option>
+                            <option value="fiscalidade">Fiscalidade</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Data preferencial</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="time" class="form-label">Horário preferencial</label>
+                        <input type="time" class="form-control" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem/Observações</label>
+                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Agendar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="banner" id="contactos" style="margin-top: 0%; margin-bottom: 0%;">
+        <div class="container text-center text-white"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1>Como nos contactar ?</h1>
+            <p style="padding: 20px 20%; box-sizing: border-box;">Nos encontre apartir dos nossos contactos ou agende uma consultoria.</p>
+
+            <div class="pxl">
+                <!-- <a href="contato.html" class="b b1">Entre em contato</a> -->
+                <!-- <a href="agendamento.html" class="b b2">Agende uma consultoria</a> -->
+            </div>
+
+            <div class="boxes">
+                <div class="box">
+                    <div class="icone">
+                        <i class="bi bi-telephone-plus-fill"></i>
+                    </div>
+                    <div class="text">
+                        <span>Telefone</span>
+                        <a href="https://wa.me/972960560" target="_blank" title="WhatsApp">(+244) 953 125 819</a>
+                    </div>
+                </div>
+                <div class="barra"></div>
+                <div class="box">
+                    <div class="icone">
+                        <i class="bi bi-envelope-check-fill"></i>
+                    </div>
+                    <div class="text">
+                        <span>Email</span>
+                        <a href="mailto:geral@emjconsultoria.com" title="E-mail">geral@emjconsultoria.com</a>
+                    </div>
+                </div>
+                <div class="barra"></div>
+                <div class="box">
+                    <div class="icone">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="text">
+                        <span>Localização</span>
+                        <p>Distrito das Ingombotas, Rua Rainha Ginga nº 80</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ...existing code... -->
+
+    <footer class="footer-financeiro">
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <img src="logo/logo.jpeg" alt="Logo Consultoria" class="footer-logo">
+                <p>
+                    Consultoria especializada em finanças, contabilidade, fiscalidade e gestão empresarial. Soluções sob
+                    medida para o crescimento do seu negócio.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Serviços</h5>
+                <ul>
+                    <li><a href="#">Consultoria Financeira</a></li>
+                    <li><a href="#">Contabilidade</a></li>
+                    <li><a href="#">Gestão de RH</a></li>
+                    <li><a href="#">Fiscalidade</a></li>
+                    <li><a href="#">Direito Empresarial</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contato</h5>
+                <ul>
+                    <li><i class="bi bi-telephone"></i> <a href="tel:+244953125819">(+244) 953 125 819</a></li>
+                    <li><i class="bi bi-envelope"></i> <a
+                            href="mailto:geral@emjconsultoria.com">geral@emjconsultoria.com</a></li>
+                    <li><i class="bi bi-geo-alt"></i> Distrito das Ingombotas, Rua Rainha Ginga nº 80</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2025 Consultoria Financeira. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
